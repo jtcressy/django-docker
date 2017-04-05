@@ -1,0 +1,9 @@
+FROM python:latest
+RUN python -m pip install django
+ENV APP_NAME default
+VOLUME /app
+WORKDIR /app
+COPY ./entrypoint.sh /
+ENTRYPOINT entrypoint.sh
+
+
