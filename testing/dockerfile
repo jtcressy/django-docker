@@ -4,6 +4,6 @@ ENV APP_NAME default
 VOLUME /app
 WORKDIR /app
 COPY ./entrypoint.sh /
-ENTRYPOINT entrypoint.sh
-
+ENTRYPOINT /entrypoint.sh
+CMD bash
 

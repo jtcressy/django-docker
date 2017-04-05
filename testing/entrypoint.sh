@@ -1,10 +1,12 @@
 #! /bin/bash
+cd /app
+echo $(ls)
 #Check if there's an existing app mounted to /app and run it
-if [ -f "/app/manage.py" ]; then
-	python /app/manage.py runserver
-else
-	cd /app
+if [ ! -f /app/$APP_NAME/manage.py ]; then
 	django-admin startproject $APP_NAME
-	python /app/manage.py runserver
+	python /app/$APP_NAME/manage.py runserver
+else
+	ls
+	python /app/$APP_NAME/manage.py runserver
 fi
 
